@@ -1,0 +1,25 @@
+
+api_server:
+  # 运行模式(debug:调试, release:正式)
+  run_mode: debug
+  # HTTP 监听地址
+  listen: :8090
+
+# 数据库连接
+database:
+  # 是否开启调试模式
+  debug: false
+  type: postgres
+  host: localhost
+  port: 5432
+  dbname: device_info
+  user: postgres
+  password: secret
+
+# 任务
+job:
+  worker_num: 10
+  poll_interval: 5
+  poll_limit: 1000
+  retries_on_timeout_limit: 3
+  retries_on_error_limit: 1
